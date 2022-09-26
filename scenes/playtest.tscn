@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/box.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/key.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/lock.tscn" type="PackedScene" id=4]
+
+[node name="playtest" type="Node2D"]
+
+[node name="background" parent="." instance=ExtResource( 2 )]
+
+[node name="lock" parent="." instance=ExtResource( 4 )]
+position = Vector2( 128, 80 )
+inputs = [ NodePath("../key") ]
+
+[node name="key" parent="." instance=ExtResource( 3 )]
+position = Vector2( 128, 24 )
+
+[node name="encrypt" type="Node2D" parent="."]
+
+[node name="box" parent="encrypt" instance=ExtResource( 1 )]
+position = Vector2( 48, 24 )
+input = "O"
+target = [ NodePath("../../lock"), NodePath("../../decrypt/box2") ]
+disabled = true
+
+[node name="box3" parent="encrypt" instance=ExtResource( 1 )]
+position = Vector2( 48, 72 )
+input = "L"
+target = [ NodePath("../../lock"), NodePath("../../decrypt/box5") ]
+disabled = true
+
+[node name="box4" parent="encrypt" instance=ExtResource( 1 )]
+position = Vector2( 48, 120 )
+input = "A"
+
+[node name="decrypt" type="Node2D" parent="."]
+
+[node name="box2" parent="decrypt" instance=ExtResource( 1 )]
+position = Vector2( 208, 24 )
+input = "P"
+disabled = true
+
+[node name="box5" parent="decrypt" instance=ExtResource( 1 )]
+position = Vector2( 208, 72 )
+input = "M"
+disabled = true
+
+[node name="box6" parent="decrypt" instance=ExtResource( 1 )]
+position = Vector2( 208, 120 )
+input = "B"

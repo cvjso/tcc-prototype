@@ -1,0 +1,21 @@
+{
+	"events": [
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "O ano é 2077 a Julius Corp domina\n mais e mais o mundo tecnológico \ncom seu monopólio explorando \nos recursos RAM no mundo virtual e\nvocê sente que precisa fazer algo à respeito..."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Através de uma brecha de segurança física\nfoi possível invadir um dos escritórios\nda empresa"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1663942308.json",
+		"name": "intro"
+	}
+}

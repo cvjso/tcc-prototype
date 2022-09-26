@@ -2,14 +2,38 @@ extends Node2D
 
 var mouseOn = false
 var canClick = true
+var Verlet = preload("res://scenes/verlet.tscn")
+var node_connected = null	# Ponteiro pro outro node
+var color
 
 func _ready():
-	pass
-
+	randomize()
+	color = randi() % 6
 
 func _on_Area2D_mouse_entered():
-	mouseOn = true
+	if canClick and not mouseOn:
+		mouseOn = true
+
+func make_connection(end_position, color):
+	var verlet = Verlet.instance()
+	add_child(verlet)
+	verlet.global_position = Vector2(0,0)
+	verlet.set_start(global_position)
+	verlet.set_last(end_position)
+	verlet.set_color(color)
+	Globals.clean()
 
 func _input(event):
-	if canClick and event.is_action_pressed("click") and mouseOn:
-		Connections.add_connection(global_position)
+	if event.is_action_pressed("click") and mouseOn:
+		if not Globals.mouse_selected:
+			Globals.mouse_selected = true
+			Globals.node_start = self
+		else:
+			node_connected = Globals.node_start
+			Globals.node_start.make_connection(global_position, color)
+
+
+
+func _on_Area2D_mouse_exited():
+	if canClick and mouseOn:
+		mouseOn = false

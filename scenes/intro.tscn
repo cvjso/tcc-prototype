@@ -1,0 +1,82 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://introTheme.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/intro.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "intro"
+length = 8.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0745098, 0.0745098, 0.0745098, 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -89.0
+margin_top = -71.5
+margin_right = 89.0
+margin_bottom = 71.5
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "O ano é 2077 a Julius Corp domina mais e mais o mundo tecnológico com seu monopólio explorando os recursos RAM no mundo virtual e você sente que precisa fazer algo à respeito...
+Você conseguiu uma brecha de segurança para se infiltrar na empresa e hackear o máximo de computadores possíveis!
+Boa sorte!"
+visible_characters = 0
+percent_visible = 0.0
+text = "O ano é 2077 a Julius Corp domina mais e mais o mundo tecnológico com seu monopólio explorando os recursos RAM no mundo virtual e você sente que precisa fazer algo à respeito...
+Você conseguiu uma brecha de segurança para se infiltrar na empresa e hackear o máximo de computadores possíveis!
+Boa sorte!"
+fit_content_height = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "intro"
+anims/RESET = SubResource( 3 )
+anims/intro = SubResource( 4 )
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 207.0
+margin_top = 134.0
+margin_right = 253.0
+margin_bottom = 149.0
+theme = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[wave][rainbow]>Proximo"
+text = ">Proximo"
