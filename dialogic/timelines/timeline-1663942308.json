@@ -4,13 +4,17 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "O ano é 2077 a Julius Corp domina\n mais e mais o mundo tecnológico \ncom seu monopólio explorando \nos recursos RAM no mundo virtual e\nvocê sente que precisa fazer algo à respeito..."
+			"text": "O ano é 2077...\nA Julius Corp domina mais e mais o mundo tecnológico com seu monopólio \nexplorando os recursos RAM no mundo virtual e você sente que precisa fazer algo à respeito..."
 		},
 		{
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Através de uma brecha de segurança física\nfoi possível invadir um dos escritórios\nda empresa"
+			"text": "Através de uma brecha de segurança física foi possível invadir um dos escritórios da empresa\nEsse é o seu momento de expor para o mundo todos os podres da empresa, aproveite essa chance e hackeie todos os computadores que conseguir\nEntranto, os computadores utilizam senhas desconhecidas\npara isso utilize conceitos de criptografia para desvendar as senhas\nBoa sorte!"
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 1
 		}
 	],
 	"metadata": {

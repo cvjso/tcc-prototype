@@ -1,0 +1,31 @@
+{
+	"events": [
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Um conceito importante relembrar é o da esteganografia"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Esteganografia é o estudo e uso das técnicas para ocultar a existência de uma mensagem"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Algo como esconder uma carta dentro de um bolo, algumas séries de TV já utilizaram bastante esse conceito..."
+		},
+		{
+			"event_id": "dialogic_022",
+			"transition_duration": 0.5
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1664373327.json",
+		"name": "esteganografia"
+	}
+}

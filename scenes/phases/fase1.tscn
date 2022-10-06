@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/box hidden.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/lantern.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/fase1.gd" type="Script" id=4]
+[ext_resource path="res://panels theme.tres" type="Theme" id=5]
+[ext_resource path="res://imgs/box.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 6 )
+region_rect = Rect2( 0, 0, 32, 32 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 6.0
+margin_bottom = 6.0
+
+[node name="fase1" type="Node2D"]
+script = ExtResource( 4 )
+next = "res://scenes/playtest.tscn"
+
+[node name="background" parent="." instance=ExtResource( 3 )]
+z_index = -2
+
+[node name="tg1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 47, 48 )
+text = "L"
+
+[node name="tg2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 83, 88 )
+text = "1"
+
+[node name="tg3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 47, 131 )
+text = "3"
+
+[node name="lantern" parent="." instance=ExtResource( 2 )]
+position = Vector2( 174, 74 )
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 13.0
+margin_top = 5.0
+margin_right = 243.0
+margin_bottom = 25.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -109.0
+margin_top = -8.0
+margin_right = 109.0
+margin_bottom = 9.0
+theme = ExtResource( 5 )
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode_enabled = true
+bbcode_text = "[center][wave]Esteganografia"
+text = "Esteganografia"
+
+[editable path="tg1"]
+[editable path="tg2"]
+[editable path="tg3"]
