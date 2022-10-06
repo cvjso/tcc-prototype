@@ -13,8 +13,15 @@
 			"text": "Através de uma brecha de segurança física foi possível invadir um dos escritórios da empresa\nEsse é o seu momento de expor para o mundo todos os podres da empresa, aproveite essa chance e hackeie todos os computadores que conseguir\nEntranto, os computadores utilizam senhas desconhecidas\npara isso utilize conceitos de criptografia para desvendar as senhas\nBoa sorte!"
 		},
 		{
-			"event_id": "dialogic_022",
-			"transition_duration": 1
+			"call_node": {
+				"arguments": [
+					"res://scenes/levels/fase1.tscn",
+					"light"
+				],
+				"method_name": "change_scene",
+				"target_node_path": "Globals"
+			},
+			"event_id": "dialogic_042"
 		}
 	],
 	"metadata": {

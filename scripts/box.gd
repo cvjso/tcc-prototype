@@ -9,7 +9,6 @@ export(Array, NodePath) var target = []
 export var disabled := false
 
 func _ready():
-	randomize()
 	text.bbcode_text = "[center]" + input
 	connection.canClick = !disabled
 	if target != []:

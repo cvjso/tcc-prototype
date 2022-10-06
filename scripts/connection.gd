@@ -26,7 +26,7 @@ func _input(event):
 		if not Globals.mouse_selected:
 			Globals.mouse_selected = true
 			Globals.node_start = self
-		else:
+		elif Globals.node_start != self:
 			node_connected = Globals.node_start
 			Globals.node_start.make_connection(global_position)
 			emit_signal("made_connection")

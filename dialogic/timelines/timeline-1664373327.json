@@ -16,7 +16,13 @@
 			"character": "",
 			"event_id": "dialogic_001",
 			"portrait": "",
-			"text": "Algo como esconder uma carta dentro de um bolo, algumas séries de TV já utilizaram bastante esse conceito..."
+			"text": "Algo como esconder uma carta dentro de um bolo, algumas séries de TV já utilizaram bastante esse conceito"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Nesse computador no lugar que deveriam ter letras da senha está vazio, utilize a ferramenta de [wave amp=10]Luz UV[/wave] para revelar o conteúdo da mensagem"
 		},
 		{
 			"event_id": "dialogic_022",
