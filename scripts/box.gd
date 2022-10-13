@@ -19,3 +19,5 @@ func _ready():
 			prev.get_node("connection").make_connection(tg.global_position, cl)
 			prev = tg
 
+func change_text(new_value):
+	text.bbcode_text = "[center]" + new_value

@@ -1,13 +1,102 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/key.gd" type="Script" id=1]
 [ext_resource path="res://imgs/box-key.png" type="Texture" id=2]
 [ext_resource path="res://scenes/connection.tscn" type="PackedScene" id=3]
+[ext_resource path="res://panels theme.tres" type="Theme" id=4]
+[ext_resource path="res://scenes/levels/panel box.tres" type="StyleBox" id=5]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 16 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -16, -39 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "show up"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:rect_position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.3, 0.5 ),
+"transitions": PoolRealArray( 1, 0.39229, 3.99999 ),
+"update": 0,
+"values": [ Vector2( -16, -13 ), Vector2( -16, -39 ), Vector2( -16, -38 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [node name="key" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="Label" type="LineEdit" parent="."]
+visible = false
+margin_left = -16.0
+margin_top = -39.0
+margin_right = 24.0
+margin_bottom = -11.0
+rect_scale = Vector2( 0.8, 0.8 )
+size_flags_horizontal = 8
+theme = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_constants/minimum_spaces = 0
+custom_styles/normal = ExtResource( 5 )
+align = 1
+caret_blink = true
 
 [node name="Box-key" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 
 [node name="connection" parent="." instance=ExtResource( 3 )]
+visible = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 2 )
+"anims/show up" = SubResource( 3 )
+
+[connection signal="text_changed" from="Label" to="." method="_on_Label_text_changed"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_Area2D_mouse_exited"]
