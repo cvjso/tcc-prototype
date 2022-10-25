@@ -21,3 +21,6 @@ func _ready():
 
 func change_text(new_value):
 	text.bbcode_text = "[center]" + new_value
+
+func get_text():
+	return text.text

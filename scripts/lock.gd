@@ -10,6 +10,8 @@ var income = null
 var outcome = null
 # O 2° input deve ficar a chave
 
+signal changed_result
+
 func _ready():
 	for target in inputs:
 		var tg = get_node(target)
@@ -25,9 +27,12 @@ func cifra_cesar(value, key):
 	var n_pos = old_pos + key % 26
 	return alpha.substr(n_pos, 1).to_upper()
 
+func get_cypher_result():
+	return outcome.get_text()
 
 func update_values():
 	if key.secret != "":
 		outcome.change_text(cifra_cesar(income.input, int(key.secret)))
+		emit_signal("changed_result")
 	else:
 		outcome.change_text("")
